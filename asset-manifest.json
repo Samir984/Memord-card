@@ -1,12 +1,24 @@
 {
   "files": {
-    "main.css": "/Memory-card/static/css/main.31d6cfe0.css",
-    "main.js": "/Memory-card/static/js/main.c5e3cb6f.js",
+    "main.css": "/Memory-card/static/css/main.853e6b1f.css",
+    "main.js": "/Memory-card/static/js/main.8b15920c.js",
+    "static/media/sad.png": "/Memory-card/static/media/sad.ae51a311241325df39ea.png",
+    "static/media/happy.png": "/Memory-card/static/media/happy.139be649880d57b98fe5.png",
+    "static/media/demon.png": "/Memory-card/static/media/demon.7a44de1c2aaf7d63c32f.png",
+    "static/media/bulb.png": "/Memory-card/static/media/bulb.b42c538950556ff12994.png",
+    "static/media/glow_bulb.png": "/Memory-card/static/media/glow_bulb.34b72c235777b5caeb3a.png",
+    "static/media/ironman.png": "/Memory-card/static/media/ironman.23123c8a8d579dffa6a6.png",
+    "static/media/spider.png": "/Memory-card/static/media/spider.bf3e785488c427cb0e21.png",
+    "static/media/dimond.png": "/Memory-card/static/media/dimond.1dff419669dacb8d4f8d.png",
+    "static/media/bomb.png": "/Memory-card/static/media/bomb.413a6fd41da99fc2f9de.png",
+    "static/media/apple.png": "/Memory-card/static/media/apple.d748832fbd1dd84ab07b.png",
+    "static/media/mouse.png": "/Memory-card/static/media/mouse.8996391ea7ce60df932f.png",
     "index.html": "/Memory-card/index.html",
-    "main.c5e3cb6f.js.map": "/Memory-card/static/js/main.c5e3cb6f.js.map"
+    "main.853e6b1f.css.map": "/Memory-card/static/css/main.853e6b1f.css.map",
+    "main.8b15920c.js.map": "/Memory-card/static/js/main.8b15920c.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.c5e3cb6f.js"
+    "static/css/main.853e6b1f.css",
+    "static/js/main.8b15920c.js"
   ]
 }
