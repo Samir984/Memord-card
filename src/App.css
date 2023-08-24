@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333;
+  user-select: none;
+  background-color: rgb(34, 34, 34);
+}
+
+.app {
+  width: 100vw;
+}
+
+.header {
+  font-family: "Creepster", cursive;
+  font-size: 8rem;
+  text-align: center;
+  color: rgb(29, 149, 53);
+}
+
+.game {
+  font-size: 1.6rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.gameinfo {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  font-weight: bold;
+  background-color: #3c3c3d;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+}
+
+.gamemain {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  perspective: 100rem;
+}
+
+.card {
+  position: relative;
+  justify-self: center;
+  width: 16rem;
+  height: 20rem;
+  color: whitesmoke;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.card-back {
+  transform: rotateY(-180deg);
+}
+
+.card.rotate .card-front {
+  transform: rotateY(180deg);
+}
+
+.card.rotate .card-back {
+  transform: rotateY(0);
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}

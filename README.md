@@ -1,4 +1,4 @@
-### Memory card
+### Memory-card
 
 Simple game in react ,[Play Game](https://samir984.github.io/Memory-card/)
 
