@@ -127,11 +127,11 @@ function Game() {
 
 function GameInfo({ flipCount, timer }) {
   return (
-    <div className="gameinfo" style={{ color: "#df040b" }}>
+    <div className="gameinfo" style={{ color: "green" }}>
       <div>
         Flips: <span className="flip__count">{flipCount}</span>
       </div>
-      <div>
+      <div style={{ color: "#df040b" }}>
         Time: <span>{timer} sec</span>
       </div>
     </div>
