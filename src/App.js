@@ -72,22 +72,20 @@ function Game() {
   useEffect(() => {
     let countdown;
 
-    if (flipCount === 1) {
-      countdown = setInterval(() => {
-        if (timer > 0 && flipCount < 80) {
-          setTimer((prevTimer) => prevTimer - 1);
-        } else {
-          clearInterval(countdown);
-          setGameOver(true);
-          alert("Game Over!");
-        }
-      }, 1000);
-    }
+    countdown = setInterval(() => {
+      if (timer > 0) {
+        setTimer((prevTimer) => prevTimer - 1);
+      } else {
+        clearInterval(countdown);
+        setGameOver(true);
+        alert("Game Over!");
+      }
+    }, 1000);
 
     return () => {
       clearInterval(countdown);
     };
-  }, [timer, flipCount]);
+  }, [timer]);
 
   const handleFlip = function (id, idx) {
     if (gameOver) {
@@ -129,12 +127,12 @@ function Game() {
 
 function GameInfo({ flipCount, timer }) {
   return (
-    <div className="gameinfo">
+    <div className="gameinfo" style={{ color: "#df040b" }}>
       <div>
         Flips: <span className="flip__count">{flipCount}</span>
       </div>
       <div>
-        Time: <span className="time">{timer} sec</span>
+        Time: <span>{timer} sec</span>
       </div>
     </div>
   );
@@ -166,7 +164,7 @@ function Card({ imgName, id, rotateState, onFlip, idx, gameOver }) {
   return (
     <li
       className={`card ${rotateState ? "rotate" : ""}`}
-      onClick={() => !rotateState && !gameOver && onFlip(id, idx)} // Disable card clicks when the game is over
+      onClick={() => !rotateState && !gameOver && onFlip(id, idx)}
     >
       <div
         className="card-front"
