@@ -1,6 +1,6 @@
 ### Memory-card
 
-Simple game in react ,[Play Game](https://samir984.github.io/Memory-card/)
+Memory card game ,[Play Game](https://samir984.github.io/Memory-card/)
 
 ## Available Scripts
 
