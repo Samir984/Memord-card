@@ -105,12 +105,12 @@ function Game() {
   useEffect(
     function () {
       let counter;
-      //cleacking for all card is flip or not
-      const allFlip = images.every((image) => image[2] === true);
 
+      const allFlip = images.some((image) => image[2] === false);
+console.log(allFlip)
       if (game) {
         counter = setInterval(() => setTimer((prev) => prev - 1), 1000);
-        if (allFlip) {
+        if (!allFlip) {
           clearInterval(counter);
           setGameState(false);
           alert("You won");
