@@ -64,7 +64,7 @@ let flipCount = 0;
 function Game() {
   const [flipId, setFlipId] = useState(null);
   const [game, setGameState] = useState(false);
-  const [timer, setTimer] = useState(100);
+  const [timer, setTimer] = useState(80);
   const [gameOver, setGameOver] = useState(false);
 
   const showFace = (idx) => (images[idx][2] = true);
