@@ -25,7 +25,6 @@ const images = [
   [happy, 8, false],
   [sad, 9, false],
   [demon, 10, false],
-  [dimond, 6, false],
   [ironman, 5, false],
   [sad, 9, false],
   [monkey, 2, false],
@@ -33,6 +32,7 @@ const images = [
   [demon, 10, false],
   [mouse, 4, false],
   [happy, 8, false],
+  [dimond, 6, false],
   [dimond, 6, false],
 ];
 
@@ -63,35 +63,20 @@ let flipCount = 0;
 
 function Game() {
   const [flipId, setFlipId] = useState(null);
+  const [game, setGameState] = useState(false);
   const [timer, setTimer] = useState(100);
   const [gameOver, setGameOver] = useState(false);
 
   const showFace = (idx) => (images[idx][2] = true);
   const hideFace = (idx) => (images[idx][2] = false);
 
-  useEffect(() => {
-    let countdown;
-
-    countdown = setInterval(() => {
-      if (timer > 0) {
-        setTimer((prevTimer) => prevTimer - 1);
-      } else {
-        clearInterval(countdown);
-        setGameOver(true);
-        alert("Game Over!");
-      }
-    }, 1000);
-
-    return () => {
-      clearInterval(countdown);
-    };
-  }, [timer]);
-
   const handleFlip = function (id, idx) {
     if (gameOver) {
       return;
     }
-
+    if (!game) {
+      setGameState(true);
+    }
     flipCount++;
     showFace(idx);
     flipCardIdx.push(idx);
@@ -116,6 +101,39 @@ function Game() {
       }, 500);
     }
   };
+
+  useEffect(
+    function () {
+      let counter;
+      //cleacking for all card is flip or not
+      const allFlip = images.every((image) => image[2] === true);
+
+      if (game) {
+        counter = setInterval(() => setTimer((prev) => prev - 1), 1000);
+        if (allFlip) {
+          clearInterval(counter);
+          setGameState(false);
+          alert("You won");
+        }
+
+        if (timer === 0) {
+          clearInterval(counter);
+          setGameState(false);
+          setGameOver(true);
+        }
+        return () => {
+          clearInterval(counter);
+        };
+      }
+    },
+    [timer, game]
+  );
+
+  useEffect(() => {
+    if (gameOver) {
+      alert("Game Over");
+    }
+  }, [gameOver]);
 
   return (
     <div className="game">
