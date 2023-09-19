@@ -107,7 +107,7 @@ function Game() {
       let counter;
 
       const allFlip = images.some((image) => image[2] === false);
-console.log(allFlip)
+
       if (game) {
         counter = setInterval(() => setTimer((prev) => prev - 1), 1000);
         if (!allFlip) {
